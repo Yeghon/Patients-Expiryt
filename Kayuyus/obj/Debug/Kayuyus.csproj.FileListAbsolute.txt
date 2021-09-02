@@ -1,0 +1,10 @@
+C:\Users\yegon.haron\Desktop\Workspace\c#\Kayuyus\Kayuyus\bin\Debug\Kayuyus.exe.config
+C:\Users\yegon.haron\Desktop\Workspace\c#\Kayuyus\Kayuyus\bin\Debug\Kayuyus.exe
+C:\Users\yegon.haron\Desktop\Workspace\c#\Kayuyus\Kayuyus\bin\Debug\Kayuyus.pdb
+C:\Users\yegon.haron\Desktop\Workspace\c#\Kayuyus\Kayuyus\obj\Debug\Kayuyus.csproj.AssemblyReference.cache
+C:\Users\yegon.haron\Desktop\Workspace\c#\Kayuyus\Kayuyus\obj\Debug\Kayuyus.Form1.resources
+C:\Users\yegon.haron\Desktop\Workspace\c#\Kayuyus\Kayuyus\obj\Debug\Kayuyus.Properties.Resources.resources
+C:\Users\yegon.haron\Desktop\Workspace\c#\Kayuyus\Kayuyus\obj\Debug\Kayuyus.csproj.GenerateResource.cache
+C:\Users\yegon.haron\Desktop\Workspace\c#\Kayuyus\Kayuyus\obj\Debug\Kayuyus.csproj.CoreCompileInputs.cache
+C:\Users\yegon.haron\Desktop\Workspace\c#\Kayuyus\Kayuyus\obj\Debug\Kayuyus.exe
+C:\Users\yegon.haron\Desktop\Workspace\c#\Kayuyus\Kayuyus\obj\Debug\Kayuyus.pdb
