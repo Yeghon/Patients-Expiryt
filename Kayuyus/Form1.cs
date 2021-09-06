@@ -43,10 +43,12 @@ namespace Kayuyus
                     // check if number
                     if (Regex.IsMatch(searchValue.Trim(), @"^\d+$"))
                     {
+                        // 😏 Maybe use a like operation instead of strict equivalence?
                         query = $"select * from tb_ward where ward_id = {searchValue}";
                     }
                     else
                     {
+                        // 😏 Also here, prefer like, though expensive, removes strict equality
                         query = $"select * from tb_ward where ward_name = '{searchValue}'";
                     }
                 }
@@ -64,7 +66,7 @@ namespace Kayuyus
             {
                 connection.Close();
             }
-            
+
         }
 
         private void tbwardName_TextChanged(object sender, EventArgs e)
@@ -73,3 +75,4 @@ namespace Kayuyus
         }
     }
 }
+
