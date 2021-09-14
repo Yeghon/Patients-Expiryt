@@ -37,12 +37,10 @@ namespace Kayuyus
                     // check if number
                     if (Regex.IsMatch(searchValue.Trim(), @"^\d+$"))
                     {
-                        // 😏 Maybe use a like operation instead of strict equivalence?
                         query = $"select * from tb_ward where ward_id like {searchValue}";
                     }
                     else
                     {
-                        // 😏 Also here, prefer like, though expensive, removes strict equality
                         query = $"select * from tb_ward where ward_name like '%{searchValue}%'";
                     }
                 }
@@ -65,6 +63,52 @@ namespace Kayuyus
         private void tbwardName_TextChanged(object sender, EventArgs e)
         {
             searchValue = tbwardName.Text;
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstCity_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string txt = lstCity.GetItemText(lstCity.SelectedItem);
+            MessageBox.Show(txt);
+        }
+
+        private void bindingNavigator1_RefreshItems(object sender, EventArgs e)
+        {
+        }
+
+        private void progress_Click(object sender, EventArgs e)
+        {
+            /*SqlCommand command = null;
+            SqlDataReader dataReader = null;
+            try
+            {
+                connection.Open();
+                string sql = "SELECT * FROM tb_ward tb", output = "";
+                command = new SqlCommand(sql, connection);
+                dataReader = command.ExecuteReader();
+                while(dataReader.Read())
+                {
+                    output = $"{output} {dataReader.GetValue(0)} -- {dataReader.GetValue(1)} -- {dataReader.GetValue(2)}\n";
+                }
+                MessageBox.Show(output);
+            } finally {
+                dataReader.Close();
+                command.Dispose();
+                connection.Close();
+            }*/
+            connection.Open();
+            var TimeStamp = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
+            string sql = $"INSERT tb_ward VALUES (11, 'Kayuyu', {TimeStamp}), (12, 'AKUH', {TimeStamp})";
+            Console.WriteLine(sql);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            dataAdapter.InsertCommand = new SqlCommand(sql, connection); 
+            dataAdapter.InsertCommand.ExecuteNonQuery();
+            //command.Dispose();
+            connection.Close();
         }
     }
 }
