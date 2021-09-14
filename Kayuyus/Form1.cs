@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Kayuyus
@@ -44,15 +38,14 @@ namespace Kayuyus
                     if (Regex.IsMatch(searchValue.Trim(), @"^\d+$"))
                     {
                         // 😏 Maybe use a like operation instead of strict equivalence?
-                        query = $"select * from tb_ward where ward_id = {searchValue}";
+                        query = $"select * from tb_ward where ward_id like {searchValue}";
                     }
                     else
                     {
                         // 😏 Also here, prefer like, though expensive, removes strict equality
-                        query = $"select * from tb_ward where ward_name = '{searchValue}'";
+                        query = $"select * from tb_ward where ward_name like '%{searchValue}%'";
                     }
                 }
-                Console.WriteLine($"Query {query}");
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                 DataTable table = new DataTable();
                 adapter.Fill(table);
